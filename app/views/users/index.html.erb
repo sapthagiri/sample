@@ -1,0 +1,23 @@
+<h1>Listing class forms</h1>
+ 
+<table>
+  <tr style="padding: 2px">
+    <th style="padding: 5px">Last Name</th>
+    <th style="padding: 5px">First Name</th>
+    <th style="padding: 5px">Stony Brook Id</th>
+    <th style="padding: 5px">Host Institution</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%=h user.last_name %></td>
+    <td><%=h user.first_name %></td>
+    <td><%=h user.stony_brook_id %></td>
+    <td><%=h user.host_institution %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Class Form', :action => 'class_form' %>

@@ -1,0 +1,26 @@
+<h1>CLASS PERMISSION FORM</h1>
+
+ <% form_for :user, :url => { :action => "create" } do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label "Last Name" %> *<br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label "First Name" %> *<br />
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label "Stony Brook Id" %> *<br />
+    <%= f.text_field :stony_brook_id %>
+  </p>
+  <p>
+    <%= f.label "Host Institution" %> *<br />
+    <%= f.text_field :host_institution %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
