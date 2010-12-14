@@ -9,11 +9,12 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
-    
+    @class_information = ClassInformation.new(params[:class_information])
+    @user.class_information << @class_information
     respond_to do |format|
       if @user.save
-        format.html { redirect_to(:action => 'index') }
-        flash[:notice] = 'Class form was successfully created.'
+         format.html { redirect_to(:action => 'index') }
+         flash[:notice] = 'Class form was successfully created.'
       else
         format.html { render :action => 'class_form' }
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }

@@ -19,8 +19,21 @@
     <%= f.label "Host Institution" %> *<br />
     <%= f.text_field :host_institution %>
   </p>
+  <%= render :partial => 'class_information' %>  
   <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
+
+<%= javascript_tag %q{
+  $(document).ready(function(){
+    $('.day').datepicker({});
+    $('.time').timepicker({
+	hourGrid: 4,
+	minuteGrid: 10,
+	ampm: true
+    });
+  });
+}%>
+
 
