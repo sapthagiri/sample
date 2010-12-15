@@ -1,25 +1,22 @@
 <h3>CLASS INFORMATION</h3>
-
- <p>
-  <%= label :class_information, "Course Title" %> 
-  <%= text_field :class_information, :title, :size => "15" %>
-
-  <%= label :class_information, "Class Number" %> 
-  <%= text_field :class_information, :class_number, :size => "15" %>
-
-  <%= label :class_information, "Section Number" %> 
-  <%= text_field :class_information, :section_number, :size => "15" %>
-
-  <%= label :class_information, "Credits" %> 
-  <%= select(:class_information, :credits, [[1, 1], [2, 2], [3, 3], [4, 4]]) %>
-
-  <%= label :class_information, "Day" %> 
-  <%= text_field :class_information, :day, :size => "15", :class => "day" %>
-
-  <%= label :class_information, "Start Time" %> 
-  <%= text_field :class_information, :start_time, :size => "15", :class => "time" %>
-
-  <%= label :class_information, "Stop Time" %> 
-  <%= text_field :class_information, :stop_time, :size => "15", :class => "time" %>
- </p>  
-
+<table class="class_info">
+ <tr>
+  <th>Course Title</th>
+  <th>Class Number</th>
+  <th>Section Number</th>
+  <th>Credits</th>
+  <th>Day</th>
+  <th>Start Time</th>
+  <th>Stop Time</th>
+ </tr>
+ 
+ <tr>
+  <td><%= text_field :class_information, :title, :size => "15" %></td>
+  <td><%= text_field :class_information, :class_number, :size => "15" %></td>
+  <td><%= text_field :class_information, :section_number, :size => "15" %></td>
+  <td><%= select(:class_information, :credits, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]]) %></td>
+  <td><%= select(:class_information, :day, ["Mon", "Tue", "Wed", "Thru", "Fri", "Sat", "Sun", "Mon,Wed", "Mon,Fri", "Mon,Wed,Fri", "Tue,Thur"]) %></td>
+  <td><%= text_field :class_information, :start_time, :size => "15", :class => "time" %></td>
+  <td><%= text_field :class_information, :stop_time, :size => "15", :class => "time" %></td>
+ </tr> 
+</table> 

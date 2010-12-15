@@ -63,25 +63,44 @@ a:hover { color: #fff; background-color:#000; }
 
 /* Class form Table */
 table.class_form{
-    border-spacing: 0px;
-    border-collapse: collapse;
-    width: 575px;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  width: 575px;
 }
 .class_form th {
-    text-align: center;
-    font-weight: bold;
-    padding: 2px;
-    border: 2px solid #FFFFFF;
-    background: #363636;
-    color: #FFFFFF;
+  text-align: center;
+  font-weight: bold;
+  padding: 2px;
+  border: 2px solid #FFFFFF;
+  background: #363636;
+  color: #FFFFFF;
 }
 
 .class_form td {
-    text-align: center;
-    padding: 2px;
-    border: 2px solid #FFFFFF;
-    background: #EAEAEA;
+  text-align: center;
+  padding: 2px;
+  border: 2px solid #FFFFFF;
+  background: #EAEAEA;
 }
 
+/* Class Information Table */
+table.class_info{
+  border-spacing: 0px;
+  border-collapse: collapse;
+  width: 575px;
+}
+.class_info th {
+  text-align: center;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid #FFFFFF;
+  background: #EAEAEA;
+  color: #363636;
+}
 
+.class_info td {
+  text-align: center;
+  padding: 2px;    
+  background: #FFFFFF;
+}
 
