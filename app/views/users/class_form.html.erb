@@ -21,7 +21,7 @@
   </p>
   <%= render :partial => 'class_information' %>  
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Submit' %>
   </p>
 <% end %>
 
@@ -29,9 +29,11 @@
   $(document).ready(function(){
     $('.day').datepicker({});
     $('.time').timepicker({
-	hourGrid: 4,
-	minuteGrid: 10,
-	ampm: true
+        hourGrid: 4,
+        minuteGrid: 30,
+        ampm: true,
+	    hourMin: 8,
+	    hourMax: 18
     });
   });
 }%>

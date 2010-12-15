@@ -61,3 +61,27 @@ a:hover { color: #fff; background-color:#000; }
 .ui-timepicker-div td { font-size: 90%; }
 
 
+/* Class form Table */
+table.class_form{
+    border-spacing: 0px;
+    border-collapse: collapse;
+    width: 575px;
+}
+.class_form th {
+    text-align: center;
+    font-weight: bold;
+    padding: 2px;
+    border: 2px solid #FFFFFF;
+    background: #363636;
+    color: #FFFFFF;
+}
+
+.class_form td {
+    text-align: center;
+    padding: 2px;
+    border: 2px solid #FFFFFF;
+    background: #EAEAEA;
+}
+
+
+

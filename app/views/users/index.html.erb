@@ -1,17 +1,17 @@
 <h1>Listing class forms</h1>
  
-<table>
-  <tr style="padding: 2px">
-    <th style="padding: 5px">Last Name</th>
-    <th style="padding: 5px">First Name</th>
-    <th style="padding: 5px">Stony Brook Id</th>
-    <th style="padding: 5px">Host Institution</th>
+<table class="class_form">
+  <tr>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Stony Brook Id</th>
+    <th>Host Institution</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
     <td><%=h user.last_name %></td>
-    <td><%=h user.first_name %></td>
+    <td><%=h link_to user.first_name, :action => "class_information", :user_id => user.id %></td>    
     <td><%=h user.stony_brook_id %></td>
     <td><%=h user.host_institution %></td>
   </tr>

@@ -1,23 +1,29 @@
-<h1>Listing class forms</h1>
+<h1>Listing class Informations</h1>
  
-<table>
-  <tr style="padding: 2px">
-    <th style="padding: 5px">Last Name</th>
-    <th style="padding: 5px">First Name</th>
-    <th style="padding: 5px">Stony Brook Id</th>
-    <th style="padding: 5px">Host Institution</th>
+<table class="class_form">
+  <tr>
+    <th>Course Title</th>
+    <th>Class Number</th>
+    <th>Section Number</th>
+    <th>Credits</th>
+    <th>Day</th>
+    <th>Start Time</th>
+    <th>Stop Time</th>
   </tr>
 
-<% @users.each do |user| %>
+<% @class_information.each do |info| %>
   <tr>
-    <td><%=h user.last_name %></td>
-    <td><%=h user.first_name %></td>
-    <td><%=h user.stony_brook_id %></td>
-    <td><%=h user.host_institution %></td>
+    <td><%=h info.title %></td>
+    <td><%=h info.class_number %></td>
+    <td><%=h info.section_number %></td>
+    <td><%=h info.credits %></td>
+    <td><%=h info.day %></td>
+    <td><%=h (info.start_time).strftime("%I:%M %p") %></td>
+    <td><%=h (info.stop_time).strftime("%I:%M %p") %></td>    
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Class Form', :action => 'class_form' %>
+<%= link_to 'Back', :controller => 'users' %>

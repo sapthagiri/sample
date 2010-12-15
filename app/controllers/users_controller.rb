@@ -6,6 +6,11 @@ class UsersController < ApplicationController
   def class_form
     @user = User.new
   end
+
+  def class_information
+    user_id = params[:user_id]
+    @class_information = ClassInformation.find(:all, :conditions => "user_id = #{user_id}")
+  end
   
   def create
     @user = User.new(params[:user])
