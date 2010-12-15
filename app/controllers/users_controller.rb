@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def class_information
     user_id = params[:user_id]
+    @user = User.find(user_id)
     @class_information = ClassInformation.find(:all, :conditions => "user_id = #{user_id}")
   end
   
