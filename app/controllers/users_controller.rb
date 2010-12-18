@@ -14,9 +14,12 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(params[:user])
-    @class_information = ClassInformation.new(params[:class_information])
-    @user.class_information << @class_information
+    @user = User.new(params[:user])    
+    (1..7).each do |i|
+     class_info = params[:"class_information#{i}"]
+     @class_information = ClassInformation.new(class_info) unless class_info.values.all?{|i| i.empty?}
+     @user.class_information << @class_information
+    end
     respond_to do |format|
       if @user.save
          format.html { redirect_to(:action => 'index') }
