@@ -14,9 +14,9 @@
   <tr class="class_information<%= i %>">
    <td><%= text_field :"class_information#{i}", :title, :size => "15" %></td>
    <td><%= text_field :"class_information#{i}", :class_number, :size => "15" %></td>
-   <td><%= text_field :"class_information#{i}", :section_number, :size => "15" %></td>
-   <td><%= select(:"class_information#{i}", :credits, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]], :include_blank => "Select Credits") %></td>
-   <td><%= select(:"class_information#{i}", :day, ["Mon", "Tue", "Wed", "Thru", "Fri", "Sat", "Sun", "Mon,Wed", "Mon,Fri", "Mon,Wed,Fri", "Tue,Thur"], :include_blank => "Select Days") %></td>
+   <td><%= select(:"class_information#{i}", :section_number, [[1, 1], [2, 2], [3, 3], [4, 4]], :include_blank => "Select") %></td>
+   <td><%= select(:"class_information#{i}", :credits, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]], :include_blank => "Select") %></td>
+   <td><%= select(:"class_information#{i}", :day, ["Mon", "Tue", "Wed", "Thru", "Fri", "Sat", "Sun", "Mon,Wed", "Mon,Fri", "Mon,Wed,Fri", "Tue,Thur"], :include_blank => "Select") %></td>
    <td><%= text_field :"class_information#{i}", :start_time, :size => "15", :class => "time" %></td>
    <td><%= text_field :"class_information#{i}", :stop_time, :size => "15", :class => "time" %></td>
   </tr>
