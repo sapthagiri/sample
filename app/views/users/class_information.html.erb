@@ -18,8 +18,8 @@
     <td><%=h info.section_number %></td>
     <td><%=h info.credits %></td>
     <td><%=h info.day %></td>
-    <td><%=h (info.start_time).strftime("%I:%M %p") %></td>
-    <td><%=h (info.stop_time).strftime("%I:%M %p") %></td>    
+    <td><%=h (info.start_time).strftime("%I:%M %p") unless info.start_time.nil? %></td>
+    <td><%=h (info.stop_time).strftime("%I:%M %p") unless info.start_time.nil? %></td>    
   </tr>
 <% end %>
 </table>

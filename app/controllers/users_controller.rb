@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     (1..7).each do |i|
      class_info = params[:"class_information#{i}"]
      @class_information = ClassInformation.new(class_info) unless class_info.values.all?{|i| i.empty?}
-     @user.class_information << @class_information
+     @user.class_information << @class_information unless @class_information.nil?
     end
     respond_to do |format|
       if @user.save
