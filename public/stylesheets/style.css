@@ -12,8 +12,8 @@ pre {
   font-size: 11px;
 }
 
-a { color: blue;}
-a:visited { color: #666; }
+a { color: #2200C1;}
+a:visited { color: #551A8B; }
 a:hover { cursor: pointer; text-decoration: underline; }
 
 .fieldWithErrors {

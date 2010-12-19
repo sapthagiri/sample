@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    page = params[:page] || 1
+    @users = @users.paginate(:page => page, :per_page => 10)    
+
   end
   
   def class_form
