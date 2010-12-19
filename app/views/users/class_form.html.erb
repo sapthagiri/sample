@@ -1,23 +1,23 @@
 <h1>CLASS PERMISSION FORM</h1>
 
- <% form_for :user, :url => { :action => "create" } do |f| %>
+ <% form_for :user, :url => { :action => "create" }, :html => {:id => 'class_form' } do |f| %>
   <%= f.error_messages %>
 
   <p>
     <%= f.label "Last Name" %> *<br />
-    <%= f.text_field :last_name %>    
+    <%= f.text_field :last_name, :class=>"validate[required,custom[onlyLetter],length[0,100]] text-input" %>    
   </p>
   <p>
     <%= f.label "First Name" %> *<br />
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, :class=>"validate[required,custom[onlyLetter],length[6,20]] text-input" %>
   </p>
   <p>
     <%= f.label "Stony Brook Id" %> *<br />
-    <%= f.text_field :stony_brook_id %>
+    <%= f.text_field :stony_brook_id, :class=>"validate[required]" %>
   </p>
   <p>
     <%= f.label "Host Institution" %> *<br />
-    <%= f.text_field :host_institution %>
+    <%= f.text_field :host_institution, :class=>"validate[required]" %>
   </p>
   <%= render :partial => 'class_information' %>  
   <p>
@@ -35,6 +35,7 @@
       hourMax: 18
     });
     
+    $("#class_form").validationEngine();    
     for (var i=7; i>1; i--){
       class = ".class_information" + i      
       $(class).hide();
