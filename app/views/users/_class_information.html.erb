@@ -1,0 +1,25 @@
+<h3>CLASS INFORMATION</h3>
+<table class="class_info">
+ <tr>
+  <th>Course Title</th>
+  <th>Class Number</th>
+  <th>Section Number</th>
+  <th>Credits</th>
+  <th>Day</th>
+  <th>Start Time</th>
+  <th>Stop Time</th>
+ </tr>
+ 
+ <% (1..7).each do |i| %>
+  <tr class="class_information<%= i %>">
+   <td><%= text_field :"class_information#{i}", :title, :size => "15" %></td>
+   <td><%= text_field :"class_information#{i}", :class_number, :size => "15" %></td>
+   <td><%= select(:"class_information#{i}", :section_number, [[1, 1], [2, 2], [3, 3], [4, 4]], :include_blank => "Select") %></td>
+   <td><%= select(:"class_information#{i}", :credits, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]], :include_blank => "Select") %></td>
+   <td><%= select(:"class_information#{i}", :day, ["Mon", "Tue", "Wed", "Thru", "Fri", "Sat", "Sun", "Mon,Wed", "Mon,Fri", "Mon,Wed,Fri", "Tue,Thur"], :include_blank => "Select") %></td>
+   <td><%= text_field :"class_information#{i}", :start_time, :size => "15", :class => "time" %></td>
+   <td><%= text_field :"class_information#{i}", :stop_time, :size => "15", :class => "time" %></td>
+  </tr>
+ <% end %>
+</table>
+<a id="add_row">Add New</a>
