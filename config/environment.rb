@@ -33,7 +33,7 @@ Rails::Initializer.run do |config|
 
   # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.  
   # Run "rake -D time" for a list of tasks for finding time zone names.
-  config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
+  #config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
   config.time_zone = 'UTC'
 
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
