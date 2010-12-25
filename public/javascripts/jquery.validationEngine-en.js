@@ -10,9 +10,7 @@
 						"alertTextCheckboxe":"* This checkbox is required"},
 					"length":{
 						"regex":"none",
-						"alertText":"*Between ",
-						"alertText2":" and ",
-						"alertText3": " characters allowed"},
+						"alertText":"* Should be 9 digit number"},
 					"maxCheckbox":{
 						"regex":"none",
 						"alertText":"* Checks allowed Exceeded"},	
@@ -80,4 +78,79 @@
 
 $(document).ready(function() {	
 	$.validationEngineLanguage.newLang();
+	
+	for (var i=7; i>1; i--){
+	  class = ".class_information" + i      
+	  $(class).hide();
+	}	
+	
+	function class_no_validate(){
+		$('.class_number').each(function(index) {
+			var class_no = $(this).val();
+			var class_no_visible = $(this).is(":visible")			
+			if (class_no.length == 0 && class_no_visible){
+				$.validationEngine.buildPrompt(".class_no_title", "* This field is required", "error")
+				return false
+			}
+			else if(isNaN($(this).val()) && class_no_visible){
+				$.validationEngine.buildPrompt(".class_no_title", "* Numbers only", "error");
+				return false
+			}
+			else if(class_no.length != 5 && class_no_visible){
+				$.validationEngine.buildPrompt(".class_no_title", "* should be 5 digit number", "error");
+				return false;
+			}			
+			else{
+				$.validationEngine.closePrompt(".class_no_title");	
+			}
+		});		
+	}
+	
+	function credits_validate(){
+		$('.credits').each(function(index){
+			var credits = $(this).val();			
+			var credits_visible = $(this).is(":visible")
+			if (credits.length == 0 && credits_visible){
+				$.validationEngine.buildPrompt(".credits_title", "This field is required", "error");
+				return false;
+			}
+			else{
+			        $.validationEngine.closePrompt(".credits_title")				
+			}
+		});		
+	}
+	
+	function day_validate(){
+		$('.day').each(function(index){
+			var day = $(this).val();			
+			var day_visible = $(this).is(":visible")
+			if (day.length == 0 && day_visible){
+				$.validationEngine.buildPrompt(".day_title", "This field is required", "error");
+				return false;
+			}
+			else{
+			        $.validationEngine.closePrompt(".day_title")				
+			}
+		});
+	}
+	
+	$(".class_number").blur(function(){
+		class_no_validate();
+	});
+	
+	$(".credits").blur(function(){
+		credits_validate();
+	});
+	
+	$(".day").blur(function(){
+		day_validate();
+	});
+
+	
+	$("#user_submit").click(function(){
+		class_no_validate();
+		credits_validate();
+		day_validate();
+	});	
+	
 });

@@ -369,7 +369,7 @@ $.validationEngine = {
 
 			if(feildLength<startLength || feildLength>endLength){
 				$.validationEngine.isError = true;
-				promptText += $.validationEngine.settings.allrules["length"].alertText+startLength+$.validationEngine.settings.allrules["length"].alertText2+endLength+$.validationEngine.settings.allrules["length"].alertText3+"<br />";
+				promptText += $.validationEngine.settings.allrules["length"].alertText;
 			}
 		}
 		function _maxCheckbox(caller,rules,position){  	  // VALIDATE CHECKBOX NUMBER

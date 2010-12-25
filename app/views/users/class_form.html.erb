@@ -5,19 +5,19 @@
 
   <p>
     <%= f.label "Last Name" %> *<br />
-    <%= f.text_field :last_name, :class=>"validate[required,custom[onlyLetter],length[0,100]] text-input" %>    
+    <%= f.text_field :last_name, :class=>"validate[required,custom[onlyLetter]] text-input" %>    
   </p>
   <p>
     <%= f.label "First Name" %> *<br />
-    <%= f.text_field :first_name, :class=>"validate[required,custom[onlyLetter],length[6,20]] text-input" %>
+    <%= f.text_field :first_name, :class=>"validate[required,custom[onlyLetter]] text-input" %>
   </p>
   <p>
     <%= f.label "Stony Brook Id" %> *<br />
-    <%= f.text_field :stony_brook_id, :class=>"validate[required]" %>
+    <%= f.text_field :stony_brook_id, :class=>"validate[required,custom[onlyNumber],length[9,9]] text-input" %>
   </p>
   <p>
     <%= f.label "Host Institution" %> *<br />
-    <%= f.text_field :host_institution, :class=>"validate[required]" %>
+    <%= f.text_field :host_institution, :class=>"validate[required,custom[onlyLetter]]" %>
   </p>
   <%= render :partial => 'class_information' %>  
   <p>
@@ -31,21 +31,20 @@
       hourGrid: 4,
       minuteGrid: 30,
       ampm: true,
-      hourMin: 8,
-      hourMax: 18
+      hourMin: 7,
+      hourMax: 22
     });
     
-    $("#class_form").validationEngine();    
-    for (var i=7; i>1; i--){
-      class = ".class_information" + i      
-      $(class).hide();
-    }
+    $("#class_form").validationEngine();
+  
+
     var row = 2;
     $("#add_row").click(function(){
       class = ".class_information" + row;
       $(class).show();
       row++;
     });
+    
   });
 }%>
 
