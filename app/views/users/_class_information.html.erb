@@ -11,7 +11,11 @@
  </tr>
  
  <% (1..7).each do |i| %>
+  <% if i == 1 %>
   <tr class="class_information<%= i %>">
+  <% else %>
+   <tr class="class_information<%= i %>" style="display: none;">
+  <% end %> 
    <td><%= text_field :"class_information#{i}", :title, :size => "15" %></td>
    <td><%= text_field :"class_information#{i}", :class_number, {:class => "class_number", :size => "15"} %></td>
    <td><%= text_field :"class_information#{i}", :section_number, {:class => "section_number", :size => "15"} %></td>      

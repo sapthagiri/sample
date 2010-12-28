@@ -1,8 +1,8 @@
 <h1>CLASS PERMISSION FORM</h1>
+<%= error_messages_for :class_information %>
 
  <% form_for :user, :url => { :action => "create" }, :html => {:id => 'class_form' } do |f| %>
-  <%= f.error_messages %>
-
+ 
   <p>
     <%= f.label "Last Name" %> *<br />
     <%= f.text_field :last_name, :class=>"validate[required,custom[onlyLetter]] text-input" %>    
@@ -36,8 +36,7 @@
     });
     
     $("#class_form").validationEngine();
-  
-
+    
     var row = 2;
     $("#add_row").click(function(){
       class = ".class_information" + row;

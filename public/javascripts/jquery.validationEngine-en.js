@@ -77,17 +77,13 @@
 })(jQuery);
 
 $(document).ready(function() {	
-	$.validationEngineLanguage.newLang();
-	
-	for (var i=7; i>1; i--){
-	  class = ".class_information" + i      
-	  $(class).hide();
-	}	
+	$.validationEngineLanguage.newLang();	
 	
 	function class_no_validate(){
 		$('.class_number').each(function(index) {
 			var class_no = $(this).val();
-			var class_no_visible = $(this).is(":visible")			
+			var class_no_visible = $(this).is(":visible")
+			var test = "#class_information"+index+"_class_number"
 			if (class_no.length == 0 && class_no_visible){
 				$.validationEngine.buildPrompt(".class_no_title", "* This field is required", "error")
 				return false
@@ -146,11 +142,4 @@ $(document).ready(function() {
 		day_validate();
 	});
 
-	
-	$("#user_submit").click(function(){
-		class_no_validate();
-		credits_validate();
-		day_validate();
-	});	
-	
 });
