@@ -50,7 +50,7 @@ class UsersController < ApplicationController
           second_start_time = time[1]
           second_stop_time = time[2]
           if (second_start_time.between?(first_start_time, first_stop_time) || second_stop_time.between?(first_start_time, first_stop_time) || first_start_time == second_start_time)
-            @time_conflict = true unless first_stop_time == second_start_time
+            @time_conflict = true unless (first_stop_time == second_start_time if first_start_time != second_start_time)
           end
         end
       end
