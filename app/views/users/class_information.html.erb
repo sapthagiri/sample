@@ -1,29 +1,31 @@
-<h3>Listing Class Informations of <%= @user.first_name %></h3>
- 
-<table class="class_form">
-  <tr>
-    <th>Course Title</th>
-    <th>Class Number</th>
-    <th>Section Number</th>
-    <th>Credits</th>
-    <th>Day</th>
-    <th>Start Time</th>
-    <th>Stop Time</th>
-  </tr>
+<div id="class_info">
+    <h3>Listing Class Informations of <%= @user.first_name %></h3>
 
-<% @class_information.each do |info| %>
-  <tr>
-    <td><%=h info.title %></td>
-    <td><%=h info.class_number %></td>
-    <td><%=h info.section_number %></td>
-    <td><%=h info.credits %></td>
-    <td><%=h info.day %></td>
-    <td><%=h (info.start_time).strftime("%I:%M %p") unless info.start_time.nil? %></td>
-    <td><%=h (info.stop_time).strftime("%I:%M %p") unless info.start_time.nil? %></td>    
-  </tr>
-<% end %>
-</table>
+    <table class="class_form">
+      <tr>
+        <th>Course Title</th>
+        <th>Class Number</th>
+        <th>Section Number</th>
+        <th>Credits</th>
+        <th>Day</th>
+        <th>Start Time</th>
+        <th>Stop Time</th>
+      </tr>
 
-<br />
+    <% @class_information.each do |info| %>
+      <tr>
+        <td><%=h info.title %></td>
+        <td><%=h info.class_number %></td>
+        <td><%=h info.section_number %></td>
+        <td><%=h info.credits %></td>
+        <td><%=h info.day %></td>
+        <td><%=h (info.start_time).strftime("%I:%M %p") unless info.start_time.nil? %></td>
+        <td><%=h (info.stop_time).strftime("%I:%M %p") unless info.start_time.nil? %></td>
+      </tr>
+    <% end %>
+    </table>
 
-<%= link_to 'Back', :controller => 'users' %>
+    <br />
+
+    <%= link_to 'Back', :controller => 'users' %>
+</div>

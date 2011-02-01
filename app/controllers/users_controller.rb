@@ -1,3 +1,4 @@
+#require 'fastercsv'
 class UsersController < ApplicationController
   def index
     @users = User.all
@@ -11,6 +12,36 @@ class UsersController < ApplicationController
     user_id = params[:user_id]
     @user = User.find(user_id)
     @class_information = ClassInformation.find(:all, :conditions => "user_id = #{user_id}")
+  end
+
+  def csv
+    response.headers['Content-Type'] = 'text/csv'
+    response.headers['Content-Disposition'] = "attachment; filename=Students_list.csv"
+
+    render :status => 200, :text => Proc.new { |response, output|
+      title = ["LAST NAME", "FIRST NAME", "STONY BROOK ID", "HOST INSTITUTION"]
+      output.write FasterCSV.generate_line(title)
+      @users = User.all
+      @users.each do |user|
+        lname = user.last_name
+        fname = user.first_name
+        stony_id = user.stony_brook_id
+        host_inst = user.host_institution
+        output.write FasterCSV.generate_line([lname, fname, stony_id, host_inst])
+        output.write FasterCSV.generate_line(["", "", "", "", "CLASS INFORMATIONS OF #{user.first_name}"])
+        output.write FasterCSV.generate_line(["", "", "", "", "TITLE", "CLASS NUMBER", "SECTION NUMBER", "DAY", "CREDITS", "START_TIME", "STOP_TIME"])
+        user.class_information.each do |info|
+          title = info.title
+          class_no = info.class_number
+          section_no = info.section_number
+          day = info.day
+          credits = info.credits
+          start_time = info.start_time.strftime("%I:%M %p") unless info.start_time.nil?
+          stop_time = info.stop_time.strftime("%I:%M %p") unless info.stop_time.nil?
+          output.write FasterCSV.generate_line(["", "", "", "", title, class_no, section_no, day, credits, start_time, stop_time])
+        end
+      end
+    }
   end
   
   def create
@@ -44,7 +75,7 @@ class UsersController < ApplicationController
       first_day = @time_range.first
       @time_range.delete_at(0)
       @time_range.each do |time|
-        if time.first.include?(first_day.first)
+        if time.first.include?(first_day.first) || first_day.first.include?(time.first) 
           first_start_time = first_day[1]
           first_stop_time = first_day[2]
           second_start_time = time[1]

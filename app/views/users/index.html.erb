@@ -1,23 +1,29 @@
-<h1>Listing class forms</h1>
- 
-<table class="class_form">
-  <tr>
-    <th>Last Name</th>
-    <th>First Name</th>
-    <th>Stony Brook Id</th>
-    <th>Host Institution</th>
-  </tr>
+<span class = "students_link">
+  <%= link_to "Export student info", :action => "csv" %>
+</span>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%=h user.last_name %></td>
-    <td><%=h link_to user.first_name, :action => "class_information", :user_id => user.id %></td>    
-    <td><%=h user.stony_brook_id %></td>
-    <td><%=h user.host_institution %></td>
-  </tr>
-<% end %>
-</table>
+<div id="class_info">
+    <h2>LISTING STUDENT INFORMATIONS</h2>
 
-<br />
+    <table class="class_form">
+      <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Stony Brook Id</th>
+        <th>Host Institution</th>
+      </tr>
 
-<%= link_to 'New Class Form', :action => 'class_form' %>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%=h user.last_name %></td>
+        <td><%=h link_to user.first_name, :action => "class_information", :user_id => user.id %></td>
+        <td><%=h user.stony_brook_id %></td>
+        <td><%=h user.host_institution %></td>
+      </tr>
+    <% end %>
+    </table>
+
+    <br />
+
+    <%= link_to 'New Class Form', :action => 'class_form' %>
+</div>    

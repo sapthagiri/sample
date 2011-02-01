@@ -10,9 +10,12 @@
 </head>
 <body>
 
-<p style="color: green"><%= notice %></p>
-<p style="color: red"><%= flash[:error] %></p>
-<%= yield %>
-
+<%= render :partial=> 'layouts/header' %>
+<div id ="content">
+    <p style="color: green; margin-left:40px;"><%= notice %></p>
+    <p style="color: red; margin-left: 40px;"><%= flash[:error] %></p>
+    <%= yield %>
+</div>
+<%= render :partial=> 'layouts/footer' %>
 </body>
 </html>

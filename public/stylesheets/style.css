@@ -1,4 +1,4 @@
-body { background-color: #fff; color: #333; }
+body { background-color: #ffffff; color: #993300; margin: 0px; padding:0px; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -6,6 +6,68 @@ body, p, ol, ul, td {
   line-height: 18px;
 }
 
+#header{
+    height: 88px;
+    background-color: #990000;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header img{ padding-left: 25px; }
+#header a{ padding-top: 35px; padding-right: 50px; }
+
+.header_content, .footer_content{
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;    
+}
+
+.search_link{
+    float: right;
+    color: #ffffff;
+    padding-top: 40px;
+    text-decoration: none;
+}
+
+#content{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    min-height:600px;
+    background-color: #E5E5E5;
+}
+
+.students_link a{
+    float: right;
+    padding-right: 175px;
+    padding-top: 7px;
+    font-size: 13px;
+}
+
+#class_form{ margin-left: 40px; }
+#class_info { margin-left: 50px;}
+
+#footer{
+    height: 182px;
+    background-color: #660000;
+    width: 960px;
+    color:#ffffff;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.footer_logo{ float: left; padding-top: 10px }
+.footer_content{ padding-top: 10px; }
+.footer_content p{ color: #ffffff; }
+
+.networks{ display: block; float: right; padding-right: 45px; }
+.networks img{ border: none; }
+.networks p{ padding-left:5px;   line-height: 25px; }
+.networks a{ text-decoration: none; color: #ffffff; }
+.networks a:visited{ text-decoration: none; color: #cccccc }
 pre {
   background-color: #eee;
   padding: 10px;
@@ -71,15 +133,15 @@ table.class_form{
   text-align: center;
   font-weight: bold;
   padding: 2px;
-  border: 2px solid #FFFFFF;
-  background: #363636;
+  border: 1px solid #660000;
+  background: #949AA9;
   color: #FFFFFF;
 }
 
 .class_form td {
   text-align: center;
   padding: 2px;
-  border: 2px solid #FFFFFF;
+  border: 1px solid #660000;
   background: #EAEAEA;
 }
 
@@ -93,14 +155,14 @@ table.class_info{
   text-align: center;
   font-weight: bold;
   padding: 2px;
-  border: 1px solid #FFFFFF;
-  background: #EAEAEA;
-  color: #363636;
+  border: 1px solid #660000;
+  background: #949AA9;
+  color: #FFFFFF;
 }
 
 .class_info td {
   text-align: center;
-  padding: 2px;    
-  background: #FFFFFF;
+  border: 1px solid #660000;    
+  background: #660000;
 }
 
