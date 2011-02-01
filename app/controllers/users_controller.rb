@@ -1,4 +1,4 @@
-#require 'fastercsv'
+require 'fastercsv'
 class UsersController < ApplicationController
   def index
     @users = User.all
