@@ -47,6 +47,10 @@ body, p, ol, ul, td {
     font-size: 13px;
 }
 
+#students_search{
+    padding-left: 355px;
+}
+
 #class_form{ margin-left: 40px; }
 #class_info { margin-left: 50px;}
 
@@ -164,4 +168,6 @@ table.class_info{
   text-align: center;
   border: 1px solid #660000;
 }
+
+
 
