@@ -21,7 +21,7 @@ GEM
       activesupport (= 2.3.8)
       rake (>= 0.8.3)
     rake (0.8.7)
-    will_paginate (3.0.pre2)
+    will_paginate (2.3.11)
 
 PLATFORMS
   x86-mswin32
@@ -29,4 +29,4 @@ PLATFORMS
 DEPENDENCIES
   fastercsv
   rails (= 2.3.8)
-  will_paginate (>= 3.0.pre2)
+  will_paginate (= 2.3.11)
