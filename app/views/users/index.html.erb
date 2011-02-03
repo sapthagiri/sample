@@ -6,7 +6,7 @@
     <h2>LISTING STUDENT INFORMATIONS</h2>
     <br/>
 
-   <% form_tag users_path, :method => 'get', :id => 'students_search' do %>
+  <% form_for :students, :url => { :action => "index" }, :html => {:id => 'students_search'} do %>   
    <p>
      <%= text_field_tag :search, params[:search] %>
      <%= submit_tag 'search', :name => nil %>
