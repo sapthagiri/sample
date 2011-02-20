@@ -1,0 +1,66 @@
+<span class = "students_link">
+  <%= link_to "List Students", :action => "index" %>
+</span>
+
+<% form_for(@student, :html => {:id => 'class_form' }) do |f| %>
+  <%= f.error_messages %>
+	<h2>CLASS PERMISSION FORM</h2>
+      <p>
+        <%= f.label "Last Name" %> *<br />
+        <%= f.text_field :last_name, :class=>"validate[required,custom[onlyLetter]] text-input" %>
+      </p>
+      <p>
+        <%= f.label "First Name" %> *<br />
+        <%= f.text_field :first_name, :class=>"validate[required,custom[onlyLetter]] text-input" %>
+      </p>
+      <p>
+        <%= f.label "Stony Brook Id" %> *<br />
+        <%= f.text_field :stony_brook_id, :class=>"validate[required,custom[onlyNumber],length[9,9]] text-input" %>
+      </p>
+      <p>
+        <%= f.label "Host Institution" %> *<br />
+        <%= f.text_field :host_institution, :class=>"validate[required,custom[onlyLetter]]" %>
+      </p>
+  
+	  <h3>CLASS INFORMATION</h3>
+		<table class="class_info">
+		 <tr>
+		  <th>Course Title</th>
+		  <th>Class Number</th>
+		  <th>Section Number</th>
+		  <th>Credits</th>
+		  <th>Day</th>
+		  <th>Start Time</th>
+		  <th>Stop Time</th>
+		 </tr>
+	    <% f.fields_for :class_infos do |builder| %>
+		<tr>
+		   <td><%= builder.text_field :title, {:class => "validate[required]", :size => "15"} %></td>
+		   <td><%= builder.text_field :class_number, {:class => "validate[required,custom[onlyNumber],length[5,5]", :size => "15"} %></td>
+		   <td><%= builder.text_field :section_number, {:class => "validate[required]", :size => "15"} %></td>
+		   <td><%= builder.select(:credits, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]],{:include_blank => "Select"}, {:class => "validate[required]"}) %></td>
+		   <td><%= builder.select(:day, ["Mon", "Tue", "Wed", "Thru", "Fri", "Sat", "Sun", "Mon,Wed", "Mon,Fri", "Mon,Wed,Fri", "Tue,Thur"], {:include_blank => "Select"}, {:class => "validate[required]"}) %></td>
+		   <td><%= builder.text_field :start_time, :size => "15", :class => "time" %></td>
+		   <td><%= builder.text_field :stop_time, :size => "15", :class => "time" %></td>
+  		</tr>  
+	 	<% end %> 
+		</table>	
+  
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= javascript_tag %q{
+  $(document).ready(function(){  
+    $('.time').timepicker({
+      hourGrid: 4,
+      minuteGrid: 30,
+      ampm: true,
+      hourMin: 7,
+      hourMax: 22
+    });
+    
+    $("#class_form").validationEngine();    
+  });
+}%>

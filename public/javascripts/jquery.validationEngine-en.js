@@ -10,7 +10,7 @@
 						"alertTextCheckboxe":"* This checkbox is required"},
 					"length":{
 						"regex":"none",
-						"alertText":"* Should be 9 digit number"},
+						"alertText":"* Should be 9 digit number"},				
 					"maxCheckbox":{
 						"regex":"none",
 						"alertText":"* Checks allowed Exceeded"},	

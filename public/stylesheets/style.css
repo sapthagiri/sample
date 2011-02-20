@@ -1,4 +1,4 @@
-body { background-color: #cccccc; color: #993300; margin: 0px; padding:0px; }
+body { background-color: #FFFFFF; color: #993300; margin: 0px; padding:0px; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -6,29 +6,16 @@ body, p, ol, ul, td {
   line-height: 18px;
 }
 
-#header{
-    height: 88px;
-    background-color: #990000;
-    width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-}
+#header{ height: 90px; background-color: #9a0000; }
 
-#header img{ padding-left: 25px; }
+.header_top{ background-color: #660000; height: 40px; }
+.header_top_logo, .header_content{ width: 960px; margin-left: auto; margin-right: auto; }
+
 #header a{ padding-top: 35px; padding-right: 50px; }
+#header hr{ color: #ffffff}
 
-.header_content, .footer_content{
-    margin-left: auto;
-    margin-right: auto;
-    width: 960px;    
-}
-
-.search_link{
-    float: right;
-    color: #ffffff;
-    padding-top: 40px;
-    text-decoration: none;
-}
+.header_content, .footer_content{ margin-left: auto; margin-right: auto; }
+.footer_content{ width: 960px; background-color: #660000; }
 
 #content{
     padding-top: 10px;
@@ -37,7 +24,7 @@ body, p, ol, ul, td {
     margin-right: auto;
     width: 960px;
     min-height:600px;
-    background-color: #E5E5E5;
+/*    background-color: #E5E5E5;*/
 }
 
 .students_link a{
@@ -55,12 +42,9 @@ body, p, ol, ul, td {
 #class_info { margin-left: 50px;}
 
 #footer{
-    height: 182px;
+    height: 32px;
     background-color: #660000;
-    width: 960px;
     color:#ffffff;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .footer_logo{ float: left; padding-top: 10px }

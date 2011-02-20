@@ -1,0 +1,38 @@
+<span class = "students_link">
+  <%= link_to "Export student info", :action => "csv" %>
+</span>
+
+<div id="class_info">
+    <h2>LISTING STUDENT INFORMATIONS</h2>
+    <br/>
+
+  <% form_for :students, :url => { :action => "index" }, :html => {:id => 'students_search'} do %>   
+   <p>
+     <%= text_field_tag :search, params[:search] %>
+     <%= submit_tag 'search', :name => nil %>
+   </p>
+   <% end %>
+    <div id="student_info">
+      <%= render :partial => 'student_info' %>
+    </div>
+    <br/>
+    <%= link_to 'New Class Form', :action => 'new' %>
+</div>
+
+
+<%= javascript_tag %q{
+  $(document).ready(function(){
+    $(".pagination a").live("click", function(){
+        $.getScript(this.href);
+        return false;
+    });
+
+    $("#students_search input").keyup(function(){
+        $.get($("#students_search").attr("action"), $("#students_search").serialize(), null, "script");
+        return false;
+    });
+  });
+}%>
+
+
+
