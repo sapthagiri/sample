@@ -12,8 +12,10 @@
 
 <%= render :partial=> 'layouts/header' %>
 <div id ="content">
-    <p style="color: green; margin-left:40px;"><%= notice %></p>
-    <p style="color: red; margin-left: 40px;"><%= flash[:error] %></p>
+	<div id="flash_msgs">
+	    <p style="color: green; margin-left:40px;"><%= notice %></p>
+	    <p style="color: red; margin-left: 40px;"><%= flash[:error] %></p>
+	</div>
     <%= yield %>
 </div>
 <%= render :partial=> 'layouts/footer' %>
