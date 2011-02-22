@@ -43,12 +43,13 @@ class Student < ActiveRecord::Base
     end
     max_credit = true if @credits > 17   
   
-   if max_credit
+   if max_credit && @time_conflict
     errors.add_to_base "CANT REGISTER FOR MORE THAN 17 CREDITS FOR EACH SEMESTER"
+    errors.add_to_base "TIME CONFLICT"
+   elsif max_credit
+    errors.add_to_base "CANT REGISTER FOR MORE THAN 17 CREDITS FOR EACH SEMESTER"        
    elsif @time_conflict
     errors.add_to_base "TIME CONFLICT"
-   elsif class_infos.empty?
-     errors.add_to_base "PLEASE ENTER ATLEAST ONE CLASS INFORMATION"
    else
     return false
    end  
