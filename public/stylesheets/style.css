@@ -11,7 +11,8 @@ body, p, ol, ul, td {
 .header_top{ background-color: #660000; height: 40px; }
 .header_top_logo, .header_content{ width: 960px; margin-left: auto; margin-right: auto; }
 
-#header a{ padding-top: 35px; padding-right: 50px; }
+#header a{ color: #FFFFFF; text-decoration: none; font-weight:bold; }
+#header a:hover{ text-decoration: underline; }
 #header hr{ color: #ffffff}
 
 .header_content, .footer_content{ margin-left: auto; margin-right: auto; }

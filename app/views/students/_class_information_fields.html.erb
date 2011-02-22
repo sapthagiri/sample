@@ -1,0 +1,61 @@
+<tr>	
+    <td>
+        <input type="text" size=15 name="student[class_infos_attributes][1][title]"  
+               class="validate[required]" id="student_class_infos_attributes_1_title" />
+    </td>
+    <td>
+        <input type="text" size=15 name="student[class_infos_attributes][1][class_number]"  
+               class="validate[required,custom[onlyNumber],length[5,5]" id="student_class_infos_attributes_1_class_number" />
+    </td>
+    <td>
+        <input type="text" size=15 name="student[class_infos_attributes][1][section_number]"  
+               class="validate[required]" id="student_class_infos_attributes_1_section_number" />
+    </td>
+    <td>
+        <select name="student[class_infos_attributes][1][credits]" id="student_class_infos_attributes_1_credits" class="validate[required]">
+            <option value="">Select</option>	       	
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+        </select>
+    </td>
+    <td>
+        <select name="student[class_infos_attributes][1][day]" id="student_class_infos_attributes_1_day" class="validate[required]">
+            <option value="">Select</option>        	
+            <option value="Mon">Mon</option>
+            <option value="Tue">Tue</option>
+            <option value="Wed">Wed</option>
+            <option value="Thru">Thru</option>
+            <option value="Fri">Fri</option>
+            <option value="Sat">Sat</option>
+            <option value="Sun">Sun</option>
+            <option value="Mon,Wed">Mon,Wed</option>
+            <option value="Mon,Fri">Mon,Fri</option>	
+			<option value="Mon,Wed,Fri">Mon,Wed,Fri</option>
+            <option value="Tue,Thru">Tue,Thru</option>
+        </select>
+    </td>
+    <td>
+        <input size=15 type="text" name="student[class_infos_attributes][1][start_time]"  
+               class="time validate[required]" id="student_class_infos_attributes_1_start_time" />
+    </td>
+    <td>
+        <input size=15 type="text" name="student[class_infos_attributes][1][stop_time]"  
+               class="time validate[required]" id="student_class_infos_attributes_1_stop_time" />
+    </td>
+	<a class="deleteClassInfo">Delete</a>
+</tr>
+
+<script type="text/javascript">	
+  $(document).ready(function(){ 
+    $('.time').timepicker({
+      hourGrid: 4,
+      minuteGrid: 30,
+      ampm: true,
+      hourMin: 7,
+      hourMax: 22
+    });  });
+</script>  

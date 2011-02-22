@@ -7,7 +7,7 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
-    7.times{ @student.class_infos.build }
+    1.times{ @student.class_infos.build }
 
     respond_to do |format|
       format.html 

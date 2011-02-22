@@ -6,10 +6,9 @@
     <h2>LISTING STUDENT INFORMATIONS</h2>
     <br/>
 
-  <% form_for :students, :url => { :action => "index" }, :html => {:id => 'students_search'} do %>   
-   <p>
-     <%= text_field_tag :search, params[:search] %>
-     <%= submit_tag 'search', :name => nil %>
+  <% form_for :students, :url => { :action => "index" }, :html => {:id => 'students_search'} do %>
+   <p>   	
+     <%= text_field_tag :search, (params[:search] or "Search by last name"), :class => "search" %>
    </p>
    <% end %>
     <div id="student_info">
@@ -28,9 +27,14 @@
     });
 
     $("#students_search input").keyup(function(){
+ 		$("#student_info").html("<p><img src='/images/ajax-loader.gif' alt='wait...' /></p>");
         $.get($("#students_search").attr("action"), $("#students_search").serialize(), null, "script");
         return false;
     });
+
+	$(".search").click(function(){
+		(this).value = "";
+	});
   });
 }%>
 
