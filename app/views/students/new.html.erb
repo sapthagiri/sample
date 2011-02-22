@@ -35,7 +35,7 @@
 		   <td><%= builder.text_field :class_number, {:class => "validate[required,custom[onlyNumber],length[5,5]", :size => "15"} %></td>
 		   <td><%= builder.text_field :section_number, {:size => "15"} %></td>
 		   <td><%= builder.select(:credits, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]],{:include_blank => "Select"}, {:class => "validate[required]"}) %></td>
-		   <td><%= builder.select(:day, ["Mon", "Tue", "Wed", "Thru", "Fri", "Sat", "Sun", "Mon,Wed", "Mon,Fri", "Mon,Wed,Fri", "Tue,Thur"], {:include_blank => "Select"}, {:class => "validate[required]"}) %></td>
+		   <td><%= builder.select(:day, ["Mon", "Tue", "Wed", "Thru", "Fri", "Sat", "Sun", "Mon,Wed", "Mon,Fri", "Mon,Wed,Fri", "Tue,Thru"], {:include_blank => "Select"}, {:class => "validate[required]"}) %></td>
 		   <td><%= builder.text_field :start_time, :size => "15", :class => "time validate[required]" %></td>
 		   <td><%= builder.text_field :stop_time, :size => "15", :class => "time validate[required]" %></td>
   		</tr>  
