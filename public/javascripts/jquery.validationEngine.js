@@ -369,7 +369,7 @@ $.validationEngine = {
 
 			if(feildLength<startLength || feildLength>endLength){
 				$.validationEngine.isError = true;
-				promptText += "* Should be " + endLength + " number"
+				promptText += "* Should be " + endLength + " digit number"
 			}
 		}
 		function _maxCheckbox(caller,rules,position){  	  // VALIDATE CHECKBOX NUMBER
