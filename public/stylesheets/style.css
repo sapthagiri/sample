@@ -36,14 +36,14 @@ body, p, ol, ul, td {
 }
 
 #students_search{
-    padding-left: 355px;
+    padding-left: 425px;
 }
 
 #class_form{ margin-left: 40px; }
 #class_info { margin-left: 50px;}
 
 #footer{
-    height: 32px;
+    height: 45px;
     background-color: #660000;
     color:#ffffff;
 }

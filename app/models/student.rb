@@ -4,7 +4,7 @@ class Student < ActiveRecord::Base
   
   def self.search(search)
     if search
-      find(:all, :conditions => ['last_name LIKE ?', "%#{search}%"])
+      find(:all, :conditions => ['upper(last_name) LIKE ?', "%#{search.upcase}%"])
     else
       find(:all)
     end

@@ -16,7 +16,7 @@
       <p>
         <%= f.label "Host Institution" %> *<br />
         <%= f.text_field :host_institution, :class=>"validate[required,custom[onlyLetter]]" %>
-      </p>
+      </p><br/>
   
 	  <h3>CLASS INFORMATION</h3>
 		<table class="class_info">
@@ -40,9 +40,8 @@
 		   <td><%= builder.text_field :stop_time, :size => "15", :class => "time validate[required]" %></td>
   		</tr>  
 	 	<% end %> 
-		</table>	
-		<a id="add_new">Add new</a>
-  
+		</table>
+		<a id="add_new">Add new</a>  
   <p>
     <%= f.submit 'Create' %>
   </p>

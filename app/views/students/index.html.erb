@@ -27,7 +27,7 @@
     });
 
     $("#students_search input").keyup(function(){
- 		$("#student_info").html("<p><img src='/images/ajax-loader.gif' alt='wait...' /></p>");
+ 		$("#student_info").html("<p><img src='/images/ajax-loader.gif' alt='Loading...' /></p>");
         $.get($("#students_search").attr("action"), $("#students_search").serialize(), null, "script");
         return false;
     });
