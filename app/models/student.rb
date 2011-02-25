@@ -6,7 +6,7 @@ class Student < ActiveRecord::Base
     if search
       find(:all, :conditions => ['upper(last_name) LIKE ?', "%#{search.upcase}%"])
     else
-      find(:all)
+      find(:all, :conditions => ['last_name !=? and first_name !=?', '', '' ])
     end
   end  
     

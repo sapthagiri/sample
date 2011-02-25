@@ -43,7 +43,7 @@ class StudentsController < ApplicationController
     render :status => 200, :text => Proc.new { |response, output|
       title = ["LAST NAME", "FIRST NAME", "STONY BROOK ID", "HOST INSTITUTION"]
       output.write FasterCSV.generate_line(title)
-      @students = Student.all
+      @students = Student.find(:all, :conditions => ['last_name !=? and first_name !=?', '', '' ])
       @students.each do |user|
         lname = user.last_name
         fname = user.first_name
